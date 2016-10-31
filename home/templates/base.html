@@ -11,23 +11,29 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-4 col-lg-3">
-        <h3>Deciphering the DNA of NYC Subway</h3>
+        <h3>Deciphering NYC Subway System</h3>
         <br>
       <nav class="navbar navbar-default navbar-fixed-left">
             <div class="collapse navbar-collapse">
               <ul class="nav nav-pills nav-stacked">
                   <li><a href="{% url 'homepage' %}">Home</a></li>
-                  <li><a href="#">Data Preparation</a></li>
-                  <li><a href="#">Exploratory Analysis</a></li>
-                  <li><a href="#">Predictive Modelling</a></li>
-                  <li><a href="#">Visualization</a></li>
+                  <li><a href="{% url 'data_preparation' %}">Data Preparation</a></li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Exploratory Analysis<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{% url 'exploratory_1' %}">Part 1</a></li>
+                        <li><a href="{% url 'exploratory_2' %}">Part 2</a></li>
+                      </ul>
+                    </li>
+                  <li><a href="{% url 'predictive' %}">Predictive Modelling</a></li>
+                  <li><a href="{% url 'visualization' %}">Visualization</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
     </div>
     <div class="col-sm-8 col-lg-9">
-      {% block mainpage %}
-{% endblock %}
+        {% block mainpage %}
+        {% endblock %}
     </div>
   </div>
 </div>

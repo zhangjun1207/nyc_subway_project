@@ -19,5 +19,6 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^exploratory_1/$', views.exploratory_1, name='exploratory_1'),
+    url(r'^exploratory_2/$', views.exploratory_2, name='exploratory_2'),
 ]
